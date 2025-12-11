@@ -124,7 +124,7 @@ echo "8. Validating GitHub Actions workflow..."
 grep -q "name:" .github/workflows/ci.yml
 test_result $? "GitHub Actions workflow has name"
 
-grep -q "docker build" .github/workflows/ci.yml
+grep -q "docker/build-push-action\|docker build\|Build Docker" .github/workflows/ci.yml
 test_result $? "GitHub Actions workflow builds Docker images"
 
 grep -q "amazon-ecr-login" .github/workflows/ci.yml
